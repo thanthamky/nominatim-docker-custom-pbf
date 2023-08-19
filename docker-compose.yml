@@ -1,0 +1,12 @@
+version: '3.1'
+
+services:
+    nominatim:
+        build:
+            context: .
+            args:
+                PBF_PATH: ./osm_file.osm.pbf
+        image: nominatim-server
+        restart: always
+        ports:
+            - 8080:8080
